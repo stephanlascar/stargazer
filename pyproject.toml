@@ -12,6 +12,7 @@ packages = [
 python = "^3.13"
 fastapi = {extras = ["standard"], version = "^0.115.14"}
 aiohttp = "^3.12.13"
+aiocache = "^0.12.3"
 
 
 [tool.poetry.group.test.dependencies]

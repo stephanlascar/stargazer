@@ -1,8 +1,8 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 
-app = FastAPI()
+from stargazer.api.deps import verify_bearer_token
+from stargazer.api.routes.main import api_router
 
+app = FastAPI(dependencies=[Depends(verify_bearer_token)])
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+app.include_router(api_router)
